@@ -21,4 +21,8 @@ RSpec.describe WebArticles::Store do
   it "stores article content" do
     expect(subject.content).to eq("Sample content")
   end
+
+  it "stores article images" do
+    expect(subject.image_urls).to eq("http://www.image.com/1.jpg;;;http://www.image.com/2.jpg;;;http://www.image.com/3.jpg")
+  end
 end
