@@ -5,7 +5,17 @@ module WebArticles
     pattr_initialize :article_url
 
     def call
-      response = RestClient::Request.execute(
+      response = execute_request
+      article_data = JSON.parse(response)
+      doc = Nokogiri::HTML(article_data["content"])
+      urls = doc.css("img").map { |img_tag| img_tag.attributes["src"].value }
+      article_data.merge({"image_urls" => urls})
+    end
+
+    private
+
+    def execute_request
+      RestClient::Request.execute(
         method: :get, 
         url: api_url, 
         headers: {
@@ -16,13 +26,7 @@ module WebArticles
           },
         }
       )
-      article_data = JSON.parse(response)
-      doc = Nokogiri::HTML(article_data["content"])
-      urls = doc.css("img").map { |img_tag| img_tag.attributes["src"].value }
-      article_data.merge({"image_urls" => urls})
     end
-
-    private
 
     def api_url
       Rails.application.config.mercury_postlight_api_url
