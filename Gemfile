@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'rest-client'
 gem "haml-rails", "~> 0.9"
 gem "attr_extras"
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -43,6 +44,8 @@ group :development, :test do
 
   gem 'rspec-rails', '~> 3.6'
   gem 'dotenv-rails'
+  gem 'factory_girl_rails'
+  
 end
 
 group :development do

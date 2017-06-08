@@ -1,0 +1,2 @@
+class WebArticle < ApplicationRecord
+end
