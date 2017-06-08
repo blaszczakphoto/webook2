@@ -6,8 +6,8 @@ RSpec.describe WebArticles::Store do
       "title" => "Sample title",
       "content" => "Sample content",
       "author" => "John Kowalski",
-      "date_published" => "John Kowalski",
-      "url" => "John Kowalski",
+      "date_published" => "11-05-1991",
+      "url" => "www.wp.pl",
       "word_count" => "John Kowalski",
       "image_urls" => [
         "http://www.image.com/1.jpg", 
@@ -28,5 +28,13 @@ RSpec.describe WebArticles::Store do
 
   it "stores title" do
     expect(subject.title).to  eq("Sample title")
+  end
+
+  it "stores date_published" do
+    expect(subject.date_published).to  eq("11-05-1991",)
+  end
+
+  it "stores url" do
+    expect(subject.url).to  eq("www.wp.pl",)
   end
 end
