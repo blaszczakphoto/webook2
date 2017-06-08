@@ -8,7 +8,7 @@ RSpec.describe WebArticles::Store do
       "author" => "John Kowalski",
       "date_published" => "11-05-1991",
       "url" => "www.wp.pl",
-      "word_count" => "John Kowalski",
+      "word_count" => "566",
       "image_urls" => [
         "http://www.image.com/1.jpg", 
         "http://www.image.com/2.jpg", 
@@ -36,5 +36,9 @@ RSpec.describe WebArticles::Store do
 
   it "stores url" do
     expect(subject.url).to  eq("www.wp.pl",)
+  end
+
+  it "stores word_count" do
+    expect(subject.word_count).to  eq("566",)
   end
 end
