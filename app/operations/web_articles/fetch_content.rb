@@ -5,8 +5,6 @@ module WebArticles
     pattr_initialize :article_url
 
     def call
-      api_url = "https://mercury.postlight.com/parser"
-      api_key = ENV.fetch("MERCURY_WEB_PARSER_API_KEY")
       response = RestClient::Request.execute(
         method: :get, 
         url: api_url, 
@@ -22,6 +20,16 @@ module WebArticles
       doc = Nokogiri::HTML(article_data["content"])
       urls = doc.css("img").map { |img_tag| img_tag.attributes["src"].value }
       article_data.merge({"image_urls" => urls})
+    end
+
+    private
+
+    def api_url
+      Rails.application.config.mercury_postlight_api_url
+    end
+
+    def api_key
+      Rails.application.config.mercury_postlight_api_key
     end
   end
 end
