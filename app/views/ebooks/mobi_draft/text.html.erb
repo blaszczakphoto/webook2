@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title><%= title %></title>
+</head>
+<body>
+<% web_articles.each do |article| %>
+  <h2 id="<%= article.id %>"><%= article.title %></h2>
+  <h4><%= article.url %></h4>
+  <div><div>
+  <%= article.content.html_safe %>
+  </div></div>
+<% end %>
+</body>
+</html>
