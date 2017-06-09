@@ -1,25 +1,16 @@
 require 'rails_helper'
-require 'rest-client'
 
 RSpec.describe Ebooks::Generate do
-  include ActionController
+  let(:article1) do
+    create(:web_article, title: "Sample title", content: "<p>content</p>")
+  end
+  let(:article2) do
+    create(:web_article, title: "Another article", content: "<p>another content</p>")
+  end
 
-  # let(:webook_disk_api_url) { "http://webookdisk.com/receive_book.php" }
-  let(:webook_disk_api_url) { "http://webookdisk.profiart.pl/" }
-  # let(:webook_disk_api_url) { "http://localhost:4567/" }
+  subject { described_class.new.call }
+
   it "sends POST request to webook_disk API" do
-    book_opf = ApplicationController.render("ebooks/mobi_draft/book.opf", layout: false)
-    text = ApplicationController.render("ebooks/mobi_draft/text.html", layout: false)
-    toc = ApplicationController.render("ebooks/mobi_draft/toc.html", layout: false)
-    response = RestClient.post(webook_disk_api_url,{
-      ebook_draft: {
-        book_id: 1234,
-        book_opf: book_opf,
-        text: text,
-        toc: toc, 
-      }
-    });
-    puts response.body
-    expect(response.body).to include(".mobi")
+    expect(subject).to include(".mobi")
   end
 end
