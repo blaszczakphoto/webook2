@@ -20,4 +20,12 @@ RSpec.describe Ebooks::Create do
     subject.call
     expect(Book.last.name).to eq("Sample title")
   end
+
+  it "fetches content for each url" do
+    fetch_content = double("FetchContent").as_null_object
+    expect(WebArticles::FetchContent).to receive(:new).once.with(urls.first) { fetch_content }
+    expect(WebArticles::FetchContent).to receive(:new).once.with(urls.second) { fetch_content }
+    expect(WebArticles::FetchContent).to receive(:new).once.with(urls.third) { fetch_content }
+    subject.call
+  end
 end
