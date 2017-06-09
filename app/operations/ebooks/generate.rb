@@ -10,9 +10,9 @@ module Ebooks
       response = RestClient.post(API_URL,{
         ebook_draft: {
           book_id: book.id,
-          book_opf: book_opf,
-          text: text,
-          toc: toc, 
+          book_opf: render_book_opf_draft,
+          text: render_text_draft,
+          toc: render_toc_draft, 
         }
         });
       puts response.body
@@ -21,15 +21,15 @@ module Ebooks
 
     private
 
-    def book_opf
+    def render_book_opf_draft
       render_draft("book.opf.erb", {title: book.name})
     end
 
-    def text
+    def render_text_draft
       render_draft("text.html.erb",{web_articles: book.web_articles, title: book.name})
     end
 
-    def toc
+    def render_toc_draft
       render_draft("toc.html.erb",{web_articles: book.web_articles, title: book.name})
     end
 
