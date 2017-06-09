@@ -7,5 +7,6 @@ FactoryGirl.define do
     author "MyString"
     word_count "MyString"
     date_published "MyString"
+    book
   end
 end

@@ -17,7 +17,7 @@ RSpec.describe WebArticles::Store do
     }
   end
   let(:book) { create(:book)}
-  subject { described_class.new(article_data).call }
+  subject { described_class.new(article_data, book).call }
   it "stores article content" do
     expect(subject.content).to eq("Sample content")
   end
@@ -40,5 +40,9 @@ RSpec.describe WebArticles::Store do
 
   it "stores word_count" do
     expect(subject.word_count).to  eq("566",)
+  end
+
+  it "associates web_article with a book" do
+    expect(subject.book_id).to eq(book.id)
   end
 end
