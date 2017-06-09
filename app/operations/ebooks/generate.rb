@@ -25,6 +25,7 @@ module Ebooks
           book_opf: render_book_opf_draft,
           text: render_text_draft,
           toc: render_toc_draft, 
+          image_urls: book.web_articles.map { |a| a.image_urls.split(";;;") }.flatten
         }
       }
     end
