@@ -15,4 +15,9 @@ RSpec.describe Ebooks::Create do
   it "creates a new ebook" do
     expect { subject.call }.to change{Book.count}.by(1)
   end
+
+  it "creates a new book with the title passed as argument" do
+    subject.call
+    expect(Book.last.name).to eq("Sample title")
+  end
 end
