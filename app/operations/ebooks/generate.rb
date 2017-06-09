@@ -22,15 +22,22 @@ module Ebooks
     private
 
     def render_book_opf_draft
-      render_draft("book.opf.erb", {title: book.name})
+      render_draft("book.opf.erb", draft_params)
     end
 
     def render_text_draft
-      render_draft("text.html.erb",{web_articles: book.web_articles, title: book.name})
+      render_draft("text.html.erb", draft_params)
     end
 
     def render_toc_draft
-      render_draft("toc.html.erb",{web_articles: book.web_articles, title: book.name})
+      render_draft("toc.html.erb", draft_params)
+    end
+
+    def draft_params
+      {
+        web_articles: book.web_articles, 
+        title: book.name
+      }
     end
 
     def render_draft(draft_file_name, locals)
