@@ -49,7 +49,11 @@ module Ebooks
     end
 
     def render_draft(draft_file_name, locals)
-      ApplicationController.render("ebooks/mobi_draft/#{draft_file_name}", layout: false, locals: locals)
+      ApplicationController.render(
+        "ebooks/mobi_draft/#{draft_file_name}", 
+        layout: false, 
+        locals: locals
+      )
     end
   end
 end

@@ -7,14 +7,16 @@ RSpec.describe Ebooks::Generate do
       title: "Sample title", 
       content: "<p>content</p>", 
       url: "www.wp.pl",
+      image_urls: "",
       book: book
       )
   end
   let!(:article2) do
     create(:web_article, 
       title: "Another article", 
-      content: "<p>another content</p>", 
+      content: "<p>another content</p><p><img src='images/2-JS117202740-yana-two-face-cat-news-small_trans_NvBQzQNjv4Bq6OSVDLJdG-ypfVsRFKR-mLAGLIqw3-UGQfihKkRs-p8.jpg' /></p>", 
       url: "www.profiart.pl",
+      image_urls: "http://www.telegraph.co.uk/content/dam/pets/2017/01/06/2-JS117202740-yana-two-face-cat-news-small_trans_NvBQzQNjv4Bq6OSVDLJdG-ypfVsRFKR-mLAGLIqw3-UGQfihKkRs-p8.jpg",
       book: book
       )
   end
@@ -52,7 +54,7 @@ RSpec.describe Ebooks::Generate do
         "\t\t<reference type=\"text\" title=\"Book\" href=\"text.html\"/>\n" +
         "\t</guide>\n" +
         "</package>\n",
-        text: "<!DOCTYPE html>\n<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n<meta charset=\"UTF-8\">\n<title>Another Sample book</title>\n</head>\n<body>\n  <h2 id=\"1\">Sample title</h2>\n  <h4>www.wp.pl</h4>\n  <div><div>\n  <p>content</p>\n  </div></div>\n  <h2 id=\"2\">Another article</h2>\n  <h4>www.profiart.pl</h4>\n  <div><div>\n  <p>another content</p>\n  </div></div>\n</body>\n</html>\n",
+        text: "<!DOCTYPE html>\n<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n<meta charset=\"UTF-8\">\n<title>Another Sample book</title>\n</head>\n<body>\n  <h2 id=\"1\">Sample title</h2>\n  <h4>www.wp.pl</h4>\n  <div><div>\n  <p>content</p>\n  </div></div>\n  <h2 id=\"2\">Another article</h2>\n  <h4>www.profiart.pl</h4>\n  <div><div>\n  <p>another content</p><p><img src='images/2-JS117202740-yana-two-face-cat-news-small_trans_NvBQzQNjv4Bq6OSVDLJdG-ypfVsRFKR-mLAGLIqw3-UGQfihKkRs-p8.jpg' /></p>\n  </div></div>\n</body>\n</html>\n",
         toc: "<!DOCTYPE html>\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n\t<meta charset=\"UTF-8\">\n\t<title>TOC</title>\n</head>\n<body>\n\t<h1 id=\"toc\">Spis treści</h1>\n\t<ul> \n      <li><a href=\"text.html#1\">Sample title</a></li> \n      <li><a href=\"text.html#2\">Another article</a></li> \n  </ul> \n</body>\n</html>\n"
       }
     }
