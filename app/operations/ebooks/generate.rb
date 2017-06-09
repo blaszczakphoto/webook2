@@ -22,15 +22,19 @@ module Ebooks
     private
 
     def book_opf
-      ApplicationController.render("ebooks/mobi_draft/book.opf.erb", layout: false, locals: {title: book.name})
+      render_draft("book.opf.erb", {title: book.name})
     end
 
     def text
-      ApplicationController.render("ebooks/mobi_draft/text.html.erb", layout: false, locals: {web_articles: book.web_articles, title: book.name})
+      render_draft("text.html.erb",{web_articles: book.web_articles, title: book.name})
     end
 
     def toc
       ApplicationController.render("ebooks/mobi_draft/toc.html.erb", layout: false,locals: {web_articles: book.web_articles, title: book.name})
+    end
+
+    def render_draft(draft_file_name, locals)
+      ApplicationController.render("ebooks/mobi_draft/#{draft_file_name}", layout: false, locals: locals)
     end
   end
 end
