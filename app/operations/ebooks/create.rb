@@ -4,8 +4,9 @@ module Ebooks
 
     def call
       Book.create(name: book_name)
-      articles_data = urls.map do |url|
-        WebArticles::FetchContent.new(url).call
+      urls.each do |url|
+        article_data = WebArticles::FetchContent.new(url).call
+        WebArticles::Store.new(article_data).call
       end
     end
   end

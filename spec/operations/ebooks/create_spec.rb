@@ -28,4 +28,8 @@ RSpec.describe Ebooks::Create do
     expect(WebArticles::FetchContent).to receive(:new).once.with(urls.third) { fetch_content }
     subject.call
   end
+
+  it "stores content for all urls" do
+    expect { subject.call }.to  change { WebArticle.count }.by(3)
+  end
 end

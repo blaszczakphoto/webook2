@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170608111107) do
+ActiveRecord::Schema.define(version: 20170609071708) do
 
   create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20170608111107) do
     t.text "content"
     t.string "title"
     t.string "url"
-    t.string "image_urls"
+    t.text "image_urls"
     t.string "author"
     t.string "word_count"
     t.string "date_published"
