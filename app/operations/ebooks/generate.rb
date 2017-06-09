@@ -30,7 +30,7 @@ module Ebooks
     end
 
     def toc
-      ApplicationController.render("ebooks/mobi_draft/toc.html.erb", layout: false,locals: {web_articles: book.web_articles, title: book.name})
+      render_draft("toc.html.erb",{web_articles: book.web_articles, title: book.name})
     end
 
     def render_draft(draft_file_name, locals)
