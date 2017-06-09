@@ -7,19 +7,27 @@ module Ebooks
     # API_URL = "http://localhost:4567/"
 
     def call
-      response = RestClient.post(API_URL,{
+      response = send_request_to_webook_disk
+      puts response.body
+      response.body
+    end
+
+    private
+
+    def send_request_to_webook_disk
+      RestClient.post(API_URL, request_params)
+    end
+
+    def request_params
+      {
         ebook_draft: {
           book_id: book.id,
           book_opf: render_book_opf_draft,
           text: render_text_draft,
           toc: render_toc_draft, 
         }
-        });
-      puts response.body
-      response.body
+      }
     end
-
-    private
 
     def render_book_opf_draft
       render_draft("book.opf.erb", draft_params)
