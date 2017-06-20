@@ -2,7 +2,6 @@ module Ebooks
   class Generate
     pattr_initialize :book
 
-    # API_URL = "http://webookdisk.com/receive_book.php"
     API_URL = "http://webookdisk.profiart.pl/"
     # API_URL = "http://localhost:4567/"
 

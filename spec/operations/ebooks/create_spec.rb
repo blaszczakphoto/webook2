@@ -32,4 +32,9 @@ RSpec.describe Ebooks::Create do
   it "stores content for all urls" do
     expect { subject.call }.to  change { WebArticle.count }.by(3)
   end
+
+  it "associates web_articles with Book" do
+    subject.call
+    expect(Book.last.web_articles.count).to be(3)
+  end
 end
