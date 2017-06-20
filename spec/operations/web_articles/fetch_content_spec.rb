@@ -9,6 +9,6 @@ RSpec.describe WebArticles::FetchContent do
   end
 
   it "it fetches urls of all images" do
-    expect(subject["image_urls"].first).to eq("https://cdn-images-1.medium.com/max/800/1*zo51eqdjJ_XSU0D8Vm8P9A.png")
+    expect(subject["image_urls"].first).to eq("https://cdn-images-1.medium.com/max/1600/1*zo51eqdjJ_XSU0D8Vm8P9A.png")
   end
 end
