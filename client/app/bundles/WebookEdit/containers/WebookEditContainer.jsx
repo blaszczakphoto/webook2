@@ -5,7 +5,10 @@ import WebookEdit from '../components/WebookEdit';
 import * as actions from '../actions/webookEditActionCreators';
 
 // Which part of the Redux global state does our component want to receive as props?
-const mapStateToProps = (state) => ({ name: state.name });
+const mapStateToProps = (state) => ({
+  name: state.name,
+  urls: state.urls
+});
 
 // Don't forget to actually use connect!
 // Note that we don't export WebookEdit, but the redux "connected" version of it.

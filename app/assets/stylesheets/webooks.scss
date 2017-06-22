@@ -25,3 +25,24 @@
     width: 161px;
   }
 }
+
+.c-webooks-edit-page {
+  margin-top: 29px;
+}
+
+.c-delete-url-btn {
+  position: absolute;
+  right: 18px;
+  font-size: 11px !important;
+}
+
+.c-webooks-urls-list {
+  list-style-position: inside;
+  padding-left: 17px;
+  &__url {
+    white-space: nowrap;
+    width: 90%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}

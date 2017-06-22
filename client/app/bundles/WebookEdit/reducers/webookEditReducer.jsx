@@ -10,6 +10,15 @@ const name = (state = '', action) => {
   }
 };
 
-const webookEditReducer = combineReducers({ name });
+const urls = (state = ["www.wp.pl/balcerowicz-musi-odejsc.html"], action) => {
+  switch (action.type) {
+    case 'WEBOOK_EDIT_ADD_URL':
+      return [...state, action.url];
+    default:
+      return state;
+  }
+}
+
+const webookEditReducer = combineReducers({ name, urls });
 
 export default webookEditReducer;
