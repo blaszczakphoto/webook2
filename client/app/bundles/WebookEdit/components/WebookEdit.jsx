@@ -26,8 +26,8 @@ const WebookEdit = ({ name, updateName, addUrl, urls }) => (
     <ul className="c-webooks-urls-list">
       {urls.map((url) => {
         return(
-          <li className="c-webooks-urls-list__url">
-            {url} 
+          <li key={url.id} className="c-webooks-urls-list__url">
+            {url.body} 
             <button 
               type="button" 
               className="btn btn-danger btn-sm c-delete-url-btn"
