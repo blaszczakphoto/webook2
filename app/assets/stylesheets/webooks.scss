@@ -1,0 +1,15 @@
+// Place all the styles related to the Webooks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.c-navbar {
+  &__brand {
+    margin-left: 67px;
+  }
+}
+
+.c-home-info {
+  margin-top: 29px;
+  text-align: center;
+  padding: 0 14px;
+}
