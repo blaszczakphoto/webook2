@@ -14,7 +14,8 @@ const WebookEdit = ({ name, updateName, addUrl, urls }) => (
           id="webook-url" 
           className="form-control" 
           type="text" 
-          placeholder="Paste new url ..." 
+          placeholder="Paste new url ..."
+          value="" 
           onPaste={(e) => {
             let pastedUrl = e.clipboardData.getData('Text');
             addUrl(pastedUrl);
