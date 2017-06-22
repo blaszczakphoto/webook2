@@ -1,3 +1,9 @@
+<% content_for(:navbar_right_button) do %>
+  <div class="btn-group c-navbar-actions" role="group" aria-label="Actions">
+    <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='<%= webooks_index_path %>'"="">Cancel</button>
+    <button type="button" class="btn btn-primary btn-sm" onclick="$('form').submit()">Save & Close</button>
+  </div>
+<% end %>
 <div class="row">
   <div class="col">
     <div class="c-webooks-edit-page">

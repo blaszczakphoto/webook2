@@ -19,6 +19,20 @@ const urls = (state = [{body: "www.wp.pl/balcerowicz-musi-odejsc.html", id: v4()
   }
 }
 
-const webookEditReducer = combineReducers({ name, urls });
+const action = (state = "", action) => {
+  switch(action.type) {
+    default:
+      return state;
+  }
+}
+
+const form_authenticity_token = (state = "", action) => {
+  switch(action.type) {
+    default:
+      return state;
+  }
+}
+
+const webookEditReducer = combineReducers({ name, urls, form_authenticity_token, action });
 
 export default webookEditReducer;

@@ -7,7 +7,9 @@ import * as actions from '../actions/webookEditActionCreators';
 // Which part of the Redux global state does our component want to receive as props?
 const mapStateToProps = (state) => ({
   name: state.name,
-  urls: state.urls
+  urls: state.urls,
+  action: state.action,
+  form_authenticity_token: state.form_authenticity_token,
 });
 
 // Don't forget to actually use connect!

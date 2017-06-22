@@ -5,9 +5,15 @@ class WebooksController < ApplicationController
   end
 
   def new
+    @webook_props = { action: webooks_create_path, form_authenticity_token: form_authenticity_token }
   end
 
   def create
+    book_name = params[:book_name]
+    urls = params[:urls]
+    binding.pry
+    Ebooks::Create.new(urls, book_name).call
+    redirect_to webooks_index_path
   end
 
   def edit
