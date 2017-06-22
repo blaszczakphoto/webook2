@@ -23,15 +23,17 @@
         <li class="nav-item <%= (current_page?(webooks_index_path)) ? "active" : "" %>">
           <a class="nav-link" href="<%= webooks_index_path %>">Webooks</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Log out</a>
-        </li>
+        <% if signed_in? %>
+          <li class="nav-item">
+            <a class="nav-link" data-method="delete" href="<%= sign_out_path %>">Log out</a>
+          </li>
+        <% end %>
       </ul>
     </div>
     <% if content_for?(:navbar_right_button) %>
       <%= yield(:navbar_right_button) %>
     <% else %>
-      <a class="c-sign-up-link" href="#">Sign in</a>
+      <a class="c-sign-up-link" href="<%= sign_in_path %>">Sign in</a>
     <% end %>
   </nav>
   <div class="container">
