@@ -14,5 +14,5 @@ heroku create
 Add all keys from .env.sample to ENV
 heroku buildpacks:set heroku/ruby --app your-app
 heroku buildpacks:add --index 1 heroku/nodejs --app your-app
-heroku buildpacks:set --index 3 https://github.com/tempoautomation/heroku-buildpack-sourceversion.git --app your-app
 git push heroku master
+heroku run rake db:migrate
