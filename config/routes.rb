@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'mobi_files/download/:book_id', to: 'mobi_files#download'
+  get 'mobi_files/download/:book_id', to: 'mobi_files#download', as: 'download'
 
   get 'hello_world', to: 'hello_world#index'
   get 'webooks/index'
