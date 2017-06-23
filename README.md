@@ -16,3 +16,7 @@ heroku buildpacks:set heroku/ruby --app your-app
 heroku buildpacks:add --index 1 heroku/nodejs --app your-app
 git push heroku master
 heroku run rake db:migrate
+
+# Run locally
+rails server
+foreman start -f Procfile.dev
