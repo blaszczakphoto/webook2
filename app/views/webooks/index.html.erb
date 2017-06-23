@@ -18,7 +18,7 @@
           <tr>
             <th scope="row"><%= index  %></th>
             <td><a href="#"><%= book.name %></a></td>
-            <td class="hidden-xs-down"><%= distance_of_time_in_words(Time.zone.now, book.updated_at) %> days ago</td>
+            <td class="hidden-xs-down"><%= distance_of_time_in_words(Time.zone.now, book.updated_at) %> ago</td>
             <td>
               <div class="btn-group">
                 <button type="button" class="btn btn-secondary">Edit</button>

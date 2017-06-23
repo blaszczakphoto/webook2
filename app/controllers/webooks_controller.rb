@@ -2,7 +2,7 @@ class WebooksController < ApplicationController
   before_action :require_login
   
   def index
-    @webooks = Book.all
+    @webooks = Book.all.order(updated_at: :desc)
   end
 
   def new
