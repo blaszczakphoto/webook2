@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: webook2_production
   username: webook2
   password: <%= ENV['WEBOOK2_DATABASE_PASSWORD'] %>
