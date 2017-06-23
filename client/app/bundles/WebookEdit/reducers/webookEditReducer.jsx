@@ -10,7 +10,7 @@ const name = (state = '', action) => {
   }
 };
 
-const urls = (state = [{body: "www.wp.pl/balcerowicz-musi-odejsc.html", id: v4()}], action) => {
+const urls = (state = [], action) => {
   switch (action.type) {
     case 'WEBOOK_EDIT_ADD_URL':
       return [...state, {body: action.url, id: v4()}];

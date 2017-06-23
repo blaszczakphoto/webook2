@@ -12,7 +12,6 @@ class WebooksController < ApplicationController
   def create
     book_name = params[:book_name]
     urls = params[:urls]
-    binding.pry
     Ebooks::Create.new(urls, book_name).call
     redirect_to webooks_index_path
   end
