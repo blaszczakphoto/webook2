@@ -75,7 +75,4 @@ end
 
 gem 'mini_racer', platforms: :ruby
 gem 'webpacker_lite'
-
-group :production do
-  gem 'pg'
-end
+gem 'pg'
