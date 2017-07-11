@@ -24,7 +24,7 @@ module Ebooks
           book_opf: render_book_opf_draft,
           text: render_text_draft,
           toc: render_toc_draft, 
-          image_urls: book.web_articles.map { |a| a.image_urls.split(";;;") }.flatten
+          image_urls: book.web_articles.order(id: :asc).map { |a| a.image_urls.split(";;;") }.flatten
         }
       }
     end
@@ -43,7 +43,7 @@ module Ebooks
 
     def draft_params
       {
-        web_articles: book.web_articles, 
+        web_articles: book.web_articles.order(id: :asc), 
         title: book.name
       }
     end

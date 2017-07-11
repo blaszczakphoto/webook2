@@ -4,6 +4,7 @@ RSpec.describe Ebooks::Generate do
   let(:book) { create(:book, name: "Another Sample book") }
   let!(:article1) do
     create(:web_article, 
+      id: 1,
       title: "Sample title", 
       content: "<p>content<img src='images/FB-Jak-tworzyc-zarabiajace-produkty.png' /></p>", 
       url: "www.wp.pl",
@@ -13,6 +14,7 @@ RSpec.describe Ebooks::Generate do
   end
   let!(:article2) do
     create(:web_article, 
+      id:2,
       title: "Another article", 
       content: "<p>another content</p><p><img src='images/2-JS117202740-yana-two-face-cat-news-small_trans_NvBQzQNjv4Bq6OSVDLJdG-ypfVsRFKR-mLAGLIqw3-UGQfihKkRs-p8.jpg' /><img src='images/FB-edukacja-finansowa-dzieci.png' /></p>", 
       url: "www.profiart.pl",
@@ -64,7 +66,7 @@ RSpec.describe Ebooks::Generate do
       }
     }
     response = double("response").as_null_object
-    expect(RestClient).to receive(:post).with(/http/,params) { response }
+    expect(RestClient).to receive(:post).with("http://webookdisk.profiart.pl/",params) { response }
     subject
   end
 
