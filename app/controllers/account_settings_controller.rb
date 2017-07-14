@@ -6,5 +6,6 @@ class AccountSettingsController < ApplicationController
   def update
     current_user.kindle_email = params.fetch("kindle_email")
     current_user.save
+    render json: current_user.to_json
   end
 end

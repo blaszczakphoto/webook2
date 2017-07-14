@@ -25,5 +25,12 @@ RSpec.describe AccountSettingsController, type: :controller do
       post :update, params
       expect(user.reload.kindle_email).to eq("johny@kindle.com")
     end
+
+    it "renders JSON when success" do
+      params = { params: {kindle_email: "johny@kindle.com"} }
+      post :update, params
+      response_json = JSON.parse(response.body).fetch("kindle_email")
+      expect(response_json).to eq("johny@kindle.com")
+    end
   end
 end
