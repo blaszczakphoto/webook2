@@ -4,5 +4,7 @@ class AccountSettingsController < ApplicationController
   end
 
   def update
+    current_user.kindle_email = params.fetch("kindle_email")
+    current_user.save
   end
 end
