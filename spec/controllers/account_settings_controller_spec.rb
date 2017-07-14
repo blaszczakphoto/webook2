@@ -14,20 +14,20 @@ RSpec.describe AccountSettingsController, type: :controller do
   end
 
   describe "POST #update" do
+    let(:params) do 
+      { params: { kindle_email: "johny@kindle.com" } } 
+    end
     it "returns http success" do
-      params = { params: {kindle_email: "john.doe@kindle.com"} }
       post :update, params
       expect(response).to have_http_status(:success)
     end
 
     it "updates current_user" do
-      params = { params: {kindle_email: "johny@kindle.com"} }
       post :update, params
       expect(user.reload.kindle_email).to eq("johny@kindle.com")
     end
 
     it "renders JSON when success" do
-      params = { params: {kindle_email: "johny@kindle.com"} }
       post :update, params
       response_json = JSON.parse(response.body).fetch("kindle_email")
       expect(response_json).to eq("johny@kindle.com")
