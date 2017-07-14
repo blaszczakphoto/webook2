@@ -2,8 +2,7 @@ import { combineReducers } from 'redux';
 
 const kindleEmail = (state = '', action) => {
   switch (action.type) {
-    case "UPDATE_KINDLE_EMAIL":
-      console.log("updating kindle email..", action.kindleEmail);
+    case "UPDATE_KINDLE_EMAIL_SUCCESS":
       return action.kindleEmail;
     default:
       return state;
