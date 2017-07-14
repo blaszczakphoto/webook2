@@ -22,6 +22,7 @@ const config = {
       'es5-shim/es5-sham',
       'babel-polyfill',
       './app/bundles/WebookEdit/startup/registration',
+      './app/bundles/AccountSettings/startup/registration',
     ],
   },
 
