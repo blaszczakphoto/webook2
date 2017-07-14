@@ -10,6 +10,7 @@ const AccountSettings = ({ updateKindleEmail, kindleEmail }) => {
           type="text"
           placeholder="Type your kindle email..."
           className="form-control"
+          defaultValue={kindleEmail}
           ref={ el => emailInput = el }
         />
       </div>
