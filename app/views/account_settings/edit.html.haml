@@ -18,4 +18,7 @@
                          readonly: true}
   %li Then scroll up to <i>Send-to-Kindle E-Mail Settings</i> and find your kindle email address. <i>e.g john.doe@kindle.com</i>
   %li Copy that email address and paste it below:
-= react_component("AccountSettingsApp", props: @account_settings_props, prerender: false)
+  
+= react_component("AccountSettingsApp", 
+                  props: @account_settings_props, 
+                  prerender: false)
