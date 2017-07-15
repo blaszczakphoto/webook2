@@ -7,7 +7,6 @@ export const updateKindleEmail = (kindleEmail) => (dispatch) => {
       type: "UPDATE_KINDLE_EMAIL_SUCCESS",
       kindleEmail,
     })
-    dispatch({ type: "UPDATE_KINDLE_EMAIL_END" });
   });
 };
 
