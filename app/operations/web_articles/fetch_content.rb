@@ -24,11 +24,11 @@ module WebArticles
     end
 
     def images_urls(article_data)
-      # doc = Nokogiri::HTML(article_data["content"], nil, Encoding::UTF_8.to_s)
       doc = Nokogiri::HTML::DocumentFragment.parse(article_data["content"], Encoding::UTF_8.to_s)
       urls = []
       doc.css("img").each do |img_tag|
-        url = img_tag.attributes["src"].value
+        raw_url = img_tag.attributes["src"].value
+        url = image_doctor_klass.new(raw_url).call
         urls.push(url)
         img_tag.set_attribute("src", new_image_path(url))
       end
@@ -53,6 +53,10 @@ module WebArticles
           },
         }
       )
+    end
+
+    def image_doctor_klass
+      WebArticles::ImageDoctor
     end
   end
 end

@@ -1,5 +1,7 @@
+require "rest-client"
+
 module WebArticles
-  class ImageValidator
+  class ImageDoctor
     pattr_initialize :base_url
 
     def call
@@ -18,10 +20,9 @@ module WebArticles
     end
 
     def url_exists?(tested_url)
-      url = URI.parse(tested_url)
-      req = Net::HTTP.new(url.host, url.port)
-      res = req.request_head(url.path)
-      res.code.to_i == 200
+      RestClient.head(tested_url).code == 200
+    rescue RestClient::Exception => e
+      return false
     end
   end
 end

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe WebArticles::ImageValidator do
+RSpec.describe WebArticles::ImageDoctor do
   context "url is valid" do
     let(:valid_url) do
       "http://www.seerinteractive.com/wp-content/uploads/2011/11/seer-icon_rocket-300x300.png"
