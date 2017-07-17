@@ -1,7 +1,5 @@
 module WebArticles
   class FetchContent
-    API_KEY = Rails.application.config.mercury_postlight_api_key
-    API_URL = Rails.application.config.mercury_postlight_api_url
     pattr_initialize :article_url
 
     def call
@@ -17,7 +15,7 @@ module WebArticles
     end
 
     def article_data
-      @article_data ||=  JSON.parse(execute_request_to_api)
+      @article_data ||= parse_webpage_klass.new(article_url).call
     end
 
     def images_urls(article_data)
@@ -38,22 +36,12 @@ module WebArticles
       "images/#{File.basename(uri.path)}"
     end
 
-    def execute_request_to_api
-      RestClient::Request.execute(
-        method: :get, 
-        url: API_URL, 
-        headers: {
-          "Content-Type" => "application/json", 
-          "x-api-key" => API_KEY,
-          "params" => {
-            "url" => article_url
-          },
-        }
-      )
-    end
-
     def image_doctor_klass
       WebArticles::ImageDoctor
+    end
+
+    def parse_webpage_klass
+      MercuryPostlight::ParseWebpage
     end
   end
 end
