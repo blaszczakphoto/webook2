@@ -1,6 +1,3 @@
-require 'rest-client'
-require 'uri'
-
 module WebArticles
   class FetchContent
     API_KEY = Rails.application.config.mercury_postlight_api_key
