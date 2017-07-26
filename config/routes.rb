@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'account_settings/edit'
+  post 'account_settings/update'
+
   get 'mobi_files/download/:book_id', to: 'mobi_files#download', as: 'download'
 
   get 'hello_world', to: 'hello_world#index'

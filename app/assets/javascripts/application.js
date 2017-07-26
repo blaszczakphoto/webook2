@@ -15,4 +15,5 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require "tether"
+//= require utilities
 //= require_tree .

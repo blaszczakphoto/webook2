@@ -1,0 +1,24 @@
+%h2 Account Settings
+%h3 Kindle
+%h4 Setup your Kindle
+%ol
+  %li 
+    Go to 
+    %a{href: "https://www.amazon.com/mn/dcw/myx.html#/home/settings/payment#pdoc", target: "_blank"} 
+      Kindle Personal Document Settings
+  %li
+    Scroll down to 
+    %i
+      Approved Personal Document E-mail List
+  %li
+    Click <i>Add a new approved e-mail address</i> and add this address:
+    %br/
+    %input.js-select-all{type: :text, 
+                         value: 'webook075@gmail.com', 
+                         readonly: true}
+  %li Then scroll up to <i>Send-to-Kindle E-Mail Settings</i> and find your kindle email address. <i>e.g john.doe@kindle.com</i>
+  %li Copy that email address and paste it below:
+  
+= react_component("AccountSettingsApp", 
+                  props: @account_settings_props, 
+                  prerender: false)
