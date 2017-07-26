@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe SendToKindle::Send do
+RSpec.describe SendToKindle::Send, :vcr do
   let!(:book) do
     created_book = create(:book, name: "Krzyżacy")
     create(:web_article, book: created_book)
