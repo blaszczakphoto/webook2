@@ -1,12 +1,12 @@
 require "rails_helper"
 
 RSpec.describe SendToKindleMailer, type: :mailer do
-  let(:kindle_email) { "mariusz.blaszczak@gmail.com" }
-  let(:book_binary_file) { File.open("#{Rails.root}/spec/support/sample.mobi").read }
+  let(:book_binary_content) { File.open("#{Rails.root}/spec/support/sample.mobi").read }
   subject do
     described_class.mobi_file(
-      kindle_email: kindle_email, 
-      book_binary_file: book_binary_file
+      kindle_email:  "mariusz.blaszczak@gmail.com", 
+      book_binary_content: book_binary_content,
+      book_filename_with_ext: "samplebook123.mobi"
     )
   end
   it "attach valid recipient" do
@@ -22,7 +22,7 @@ RSpec.describe SendToKindleMailer, type: :mailer do
   end
 
   it "attach mobi file" do
-    expect(subject.attachments.first.filename).to eq("book.mobi")
-    expect(subject.attachments.first.body.raw_source).to eq(book_binary_file)
+    expect(subject.attachments.first.filename).to eq("samplebook123.mobi")
+    expect(subject.attachments.first.body.raw_source).to eq(book_binary_content)
   end
 end
