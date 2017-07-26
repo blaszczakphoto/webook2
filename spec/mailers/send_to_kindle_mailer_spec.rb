@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe SendToKindleMailer, type: :mailer do
   let(:book_binary_content) { File.open("#{Rails.root}/spec/support/sample.mobi").read }
   subject do
-    described_class.mobi_file(
+    described_class.create(
       kindle_email:  "mariusz.blaszczak@gmail.com", 
       book_binary_content: book_binary_content,
       book_filename_with_ext: "samplebook123.mobi"

@@ -15,7 +15,7 @@ module SendToKindle
     private
 
     def send_to_kindle_email
-      SendToKindleMailer.mobi_file(
+      SendToKindleMailer.create(
         kindle_email: kindle_email, 
         book_binary_content: book_binary_content,
         book_filename_with_ext: book_filename_with_ext
