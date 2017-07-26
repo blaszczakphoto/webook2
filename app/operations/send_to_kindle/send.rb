@@ -9,17 +9,35 @@ module SendToKindle
     end
 
     def call
-      book = Book.find(book_id)
-      mobi_file_url = Ebooks::Generate.new(book).call
-      book_binary_content = ""
-      open(mobi_file_url) { |file| book_binary_content = file.read }
-      SendToKindleMailer.mobi_file(
-        kindle_email: kindle_email, 
-        book_binary_content: book_binary_content,
-        book_filename_with_ext: book.name
-      ).deliver_now
+      send_to_kindle_email
     end
 
     private
+
+    def send_to_kindle_email
+      SendToKindleMailer.mobi_file(
+        kindle_email: kindle_email, 
+        book_binary_content: book_binary_content,
+        book_filename_with_ext: book_filename_with_ext
+      ).deliver_now
+    end
+
+    def book_binary_content
+      book_binary_content = ""
+      open(mobi_file_url) { |file| book_binary_content = file.read }
+      book_binary_content
+    end
+
+    def mobi_file_url
+      Ebooks::Generate.new(book).call
+    end
+
+    def book
+      @book ||= Book.find(book_id)
+    end
+
+    def book_filename_with_ext
+      "#{book.name}.mobi"
+    end
   end
 end
