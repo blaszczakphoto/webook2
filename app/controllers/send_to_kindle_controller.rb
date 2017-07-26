@@ -3,6 +3,7 @@ class SendToKindleController < ApplicationController
   
   def send_email
     send_to_kindle_operation
+    flash[:notice] = 'The kindle ebook was successfuly sent to the device.'
     redirect_to(webooks_index_path)
   end
 
