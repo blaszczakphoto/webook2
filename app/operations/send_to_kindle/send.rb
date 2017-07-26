@@ -1,11 +1,12 @@
 require 'open-uri'
 module SendToKindle
   class Send
-    attr_reader :kindle_email, :book_id
+    attr_reader :kindle_email, :book_id, :mailerKlass
     
-    def initialize(kindle_email:, book_id:)
+    def initialize(kindle_email:, book_id:, mailerKlass: SendToKindleMailer)
       @kindle_email = kindle_email
       @book_id = book_id
+      @mailerKlass = mailerKlass
     end
 
     def call
@@ -15,7 +16,7 @@ module SendToKindle
     private
 
     def send_to_kindle_email
-      SendToKindleMailer.create(
+      mailerKlass.create(
         kindle_email: kindle_email, 
         book_binary_content: book_binary_content,
         book_filename_with_ext: book_filename_with_ext
