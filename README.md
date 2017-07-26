@@ -7,10 +7,8 @@
 4. GMAIL_APP_PASSWORD - create a google gmail account with 2-step enabled and then create application password
 5.`bundle install`
 6. edit database.yml and fill in valid credentials for db
-
-`rake db:create`
-
-`rake db:migrate`
+7. `rake db:create`
+8. `rake db:migrate`
 
 ### clone webook_disk
 clone webook_disk to separate directory and run in apache and set host for it webookdisk.com
