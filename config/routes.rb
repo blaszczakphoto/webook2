@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'send_to_kindle/send'
+
   get 'account_settings/edit'
   post 'account_settings/update'
 
