@@ -2,13 +2,13 @@
 
 ## Setup 
 1. `cp .env.sample .env`
-2. and fill in with proper values:
-3. MERCURY_WEB_PARSER_API_KEY - the key you can obtain here https://mercury.postlight.com/web-parser/
-4. GMAIL_APP_PASSWORD - create a google gmail account with 2-step enabled and then create application password
-5.`bundle install`
-6. edit database.yml and fill in valid credentials for db
-7. `rake db:create`
-8. `rake db:migrate`
+2. and fill in with proper values:  
+MERCURY_WEB_PARSER_API_KEY - the key you can obtain here https://mercury.postlight.com/web-parser/  
+GMAIL_APP_PASSWORD - create a google gmail account with 2-step enabled and then create application password
+5. `bundle install`
+6. edit database.yml and fill in valid credentials for db  
+`rake db:create`  
+`rake db:migrate`
 
 ### clone webook_disk
 clone webook_disk to separate directory and run in apache and set host for it webookdisk.com
