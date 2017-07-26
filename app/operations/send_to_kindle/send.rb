@@ -11,11 +11,12 @@ module SendToKindle
     def call
       book = Book.find(book_id)
       mobi_file_url = Ebooks::Generate.new(book).call
-      book_mobi_binary_file = ""
-      open(mobi_file_url) { |file| book_mobi_binary_file = file.read }
+      book_binary_content = ""
+      open(mobi_file_url) { |file| book_binary_content = file.read }
       SendToKindleMailer.mobi_file(
         kindle_email: kindle_email, 
-        book_mobi_binary_file: book_mobi_binary_file
+        book_binary_content: book_binary_content,
+        book_filename_with_ext: book.name
       ).deliver_now
     end
 
