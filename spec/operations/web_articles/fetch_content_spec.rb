@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'rest-client'
 
-RSpec.describe WebArticles::FetchContent do
+RSpec.describe WebArticles::FetchContent, :vcr do
   subject { described_class.new(article_url).call }
   let(:article_url) { "https://trackchanges.postlight.com/building-awesome-cms-f034344d8ed" }
     it "fetches articles data from external API" do
