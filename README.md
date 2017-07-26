@@ -17,6 +17,12 @@ heroku buildpacks:add --index 1 heroku/nodejs --app your-app
 git push heroku master
 heroku run rake db:migrate
 
+## Deploy to staging
+`git push staging staging:master`
+
+## Deploy to production
+`git push production master`
+
 # Run locally
 rails server
 foreman start -f Procfile.dev
