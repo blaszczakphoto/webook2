@@ -41,6 +41,15 @@
     <% end %>
   </nav>
   <div class="container">
+    <% flash.each do |name, msg| -%>
+      <br>
+      <div class="alert alert-success fade show alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        <strong>Well done!</strong> <%= msg %>
+      </div>
+    <% end -%>
     <%= yield %>
   </div>
 </body>

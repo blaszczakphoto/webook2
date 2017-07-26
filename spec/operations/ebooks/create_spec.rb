@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Ebooks::Create do
+RSpec.describe Ebooks::Create, :vcr do
   let(:urls) do
     [
       "https://www.justinweiss.com/articles/writing-a-one-time-script-in-rails/",

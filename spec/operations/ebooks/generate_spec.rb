@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Ebooks::Generate do
+RSpec.describe Ebooks::Generate, :vcr do
   let(:book) { create(:book, name: "Another Sample book") }
   let!(:article1) do
     create(:web_article, 

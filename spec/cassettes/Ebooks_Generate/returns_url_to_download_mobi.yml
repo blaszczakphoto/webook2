@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://webookdisk.profiart.pl/
+    body:
+      encoding: UTF-8
+      string: ebook_draft[book_id]=1&ebook_draft[book_opf]=%3C%3Fxml+version%3D%221.0%22+encoding%3D%22utf-8%22%3F%3E%0A%3Cpackage+unique-identifier%3D%22uid%22+xmlns%3Aopf%3D%22http%3A%2F%2Fwww.idpf.org%2F2007%2Fopf%22+xmlns%3Aasd%3D%22http%3A%2F%2Fwww.idpf.org%2Fasdfaf%22%3E%0A%09%3Cmetadata%3E%0A%09%09%3Cdc-metadata++xmlns%3Adc%3D%22http%3A%2F%2Fpurl.org%2Fmetadata%2Fdublin_core%22+xmlns%3Aoebpackage%3D%22http%3A%2F%2Fopenebook.org%2Fnamespaces%2Foeb-package%2F1.0%2F%22%3E%0A%09%09%09%3Cdc%3ATitle%3EAnother+Sample+book%3C%2Fdc%3ATitle%3E%0A%09%09%09%3Cdc%3ALanguage%3Een%3C%2Fdc%3ALanguage%3E%0A%09%09%09%3Cdc%3ACreator%3Ewebook%3C%2Fdc%3ACreator%3E%0A%09%09%09%3Cdc%3ACopyrights%3Ewebook%3C%2Fdc%3ACopyrights%3E%0A%09%09%09%3Cdc%3APublisher%3Ewebook%3C%2Fdc%3APublisher%3E%0A%09%09%09%3Cx-metadata%3E%0A%09%09%09%09%3C%21--+%3CEmbeddedCover%3Eimages%2Fcover.jpg%3C%2FEmbeddedCover%3E+--%3E%0A%09%09%09%3C%2Fx-metadata%3E%0A%09%09%3C%2Fdc-metadata%3E%0A%09%3C%2Fmetadata%3E%0A%09%3Cmanifest%3E%0A%09%09%3Citem+id%3D%22content%22+media-type%3D%22text%2Fx-oeb1-document%22+href%3D%22toc.html%22%3E%3C%2Fitem%3E%0A%09%09%3Citem+id%3D%22text%22+media-type%3D%22text%2Fx-oeb1-document%22+href%3D%22text.html%22%3E%3C%2Fitem%3E%0A%09%3C%2Fmanifest%3E%0A%09%3Cspine+toc%3D%22ncx%22%3E%0A%09%09%3Citemref+idref%3D%22content%22%2F%3E%0A%09%09%3Citemref+idref%3D%22text%22%2F%3E%0A%09%3C%2Fspine%3E%0A%09%3Cguide%3E%0A%09%09%3Creference+type%3D%22toc%22+title%3D%22Table+of+Contents%22+href%3D%22toc.html%22%2F%3E%0A%09%09%3Creference+type%3D%22text%22+title%3D%22Book%22+href%3D%22text.html%22%2F%3E%0A%09%3C%2Fguide%3E%0A%3C%2Fpackage%3E%0A&ebook_draft[text]=%3C%21DOCTYPE+html%3E%0A%3Chtml%3E%0A%3Chead%3E%0A%3Cmeta+http-equiv%3D%22Content-Type%22+content%3D%22text%2Fhtml%3B+charset%3DUTF-8%22%3E%0A%3Cmeta+charset%3D%22UTF-8%22%3E%0A%3Ctitle%3EAnother+Sample+book%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A++%3Ch2+id%3D%221%22%3ESample+title%3C%2Fh2%3E%0A++%3Ch4%3Ewww.wp.pl%3C%2Fh4%3E%0A++%3Cdiv%3E%3Cdiv%3E%0A++%3Cp%3Econtent%3Cimg+src%3D%27images%2FFB-Jak-tworzyc-zarabiajace-produkty.png%27+%2F%3E%3C%2Fp%3E%0A++%3C%2Fdiv%3E%3C%2Fdiv%3E%0A++%3Ch2+id%3D%222%22%3EAnother+article%3C%2Fh2%3E%0A++%3Ch4%3Ewww.profiart.pl%3C%2Fh4%3E%0A++%3Cdiv%3E%3Cdiv%3E%0A++%3Cp%3Eanother+content%3C%2Fp%3E%3Cp%3E%3Cimg+src%3D%27images%2F2-JS117202740-yana-two-face-cat-news-small_trans_NvBQzQNjv4Bq6OSVDLJdG-ypfVsRFKR-mLAGLIqw3-UGQfihKkRs-p8.jpg%27+%2F%3E%3Cimg+src%3D%27images%2FFB-edukacja-finansowa-dzieci.png%27+%2F%3E%3C%2Fp%3E%0A++%3C%2Fdiv%3E%3C%2Fdiv%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E%0A&ebook_draft[toc]=%3C%21DOCTYPE+html%3E%0A%3Chtml+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%0A%3Chead%3E%0A%09%3Cmeta+http-equiv%3D%22Content-Type%22+content%3D%22text%2Fhtml%3B+charset%3DUTF-8%22%3E%0A%09%3Cmeta+charset%3D%22UTF-8%22%3E%0A%09%3Ctitle%3ETOC%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%09%3Ch1+id%3D%22toc%22%3ESpis+tre%C5%9Bci%3C%2Fh1%3E%0A%09%3Cul%3E+%0A++++++%3Cli%3E%3Ca+href%3D%22text.html%231%22%3ESample+title%3C%2Fa%3E%3C%2Fli%3E+%0A++++++%3Cli%3E%3Ca+href%3D%22text.html%232%22%3EAnother+article%3C%2Fa%3E%3C%2Fli%3E+%0A++%3C%2Ful%3E+%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E%0A&ebook_draft[image_urls][]=http%3A%2F%2Fjakoszczedzacpieniadze.pl%2Fwp-content%2Fuploads%2F2017%2F05%2FFB-Jak-tworzyc-zarabiajace-produkty.png&ebook_draft[image_urls][]=http%3A%2F%2Fwww.telegraph.co.uk%2Fcontent%2Fdam%2Fpets%2F2017%2F01%2F06%2F2-JS117202740-yana-two-face-cat-news-small_trans_NvBQzQNjv4Bq6OSVDLJdG-ypfVsRFKR-mLAGLIqw3-UGQfihKkRs-p8.jpg&ebook_draft[image_urls][]=http%3A%2F%2Fjakoszczedzacpieniadze.pl%2Fwp-content%2Fuploads%2F2017%2F06%2FFB-edukacja-finansowa-dzieci.png
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.4.1p111
+      Content-Length:
+      - '3672'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - webookdisk.profiart.pl
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 26 Jul 2017 19:41:00 GMT
+      Content-Type:
+      - text/html;charset=utf-8
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding,User-Agent
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '87'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAwXBCQqAIBAAwB/tYYcVRE8RzEAhXUtJn9+MrzWXDbG1Bu6VbKXDKRELLqkPT/zkWhNPwSMbxSMTGTWTVsQaothwuHvnH3QFxjlFAAAA
+    http_version: 
+  recorded_at: Wed, 26 Jul 2017 19:41:04 GMT
+recorded_with: VCR 3.0.3

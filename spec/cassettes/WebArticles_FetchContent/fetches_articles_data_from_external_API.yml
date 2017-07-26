@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://mercury.postlight.com/parser?url=https://trackchanges.postlight.com/building-awesome-cms-f034344d8ed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.4.1p111
+      Content-Type:
+      - application/json
+      X-Api-Key:
+      - War0OOXx4KTFHKVxJPQGO7apCM2f6tGl5cNM2oPn
+      Host:
+      - mercury.postlight.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 26 Jul 2017 19:41:06 GMT
+      Via:
+      - 1.1 55ee6ea70e0823309f10db2e4b8f119f.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - eQzeyjd5OWSiAXvF3tLuCf4DAiw8Sdb99QxfbCiDIltVpLSJHDjlvg==
+      X-Amzn-Requestid:
+      - 5d5cecc3-723a-11e7-a791-0d3434dec5ed
+      X-Amzn-Trace-Id:
+      - Root=1-5978f051-f899d0101564874007e5bffa
+      X-Cache:
+      - Miss from cloudfront
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '2327'
+      Age:
+      - '1'
+      Connection:
+      - keep-alive
+      Server:
+      - Netlify
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+    http_version: 
+  recorded_at: Wed, 26 Jul 2017 19:41:06 GMT
+recorded_with: VCR 3.0.3
