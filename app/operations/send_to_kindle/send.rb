@@ -23,9 +23,7 @@ module SendToKindle
     end
 
     def book_binary_content
-      book_binary_content = ""
-      open(mobi_file_url) { |file| book_binary_content = file.read }
-      book_binary_content
+      open(mobi_file_url) { |file| file.read }
     end
 
     def mobi_file_url
