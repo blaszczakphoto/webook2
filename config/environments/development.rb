@@ -53,4 +53,15 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
-end
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'webookbits.herokuapp.com',
+    user_name:            'webook075@gmail.com',
+    password:             ENV.fetch('GMAIL_APP_PASSWORD'),
+    authentication:       'plain',
+    enable_starttls_auto: true  
+  }
+  end
