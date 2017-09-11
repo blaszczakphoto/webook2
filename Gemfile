@@ -30,6 +30,7 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 gem "jquery-rails"
 gem "clearance"
 gem "react_on_rails", "8.0.0"
+gem "sentry-raven"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
