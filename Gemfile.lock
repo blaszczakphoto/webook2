@@ -79,6 +79,8 @@ GEM
     factory_girl_rails (4.8.0)
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
+    faraday (0.13.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
@@ -124,6 +126,7 @@ GEM
       libv8 (~> 5.3)
     minitest (5.10.2)
     multi_json (1.12.1)
+    multipart-post (2.0.0)
     mysql2 (0.4.6)
     netrc (0.11.0)
     nio4r (2.1.0)
@@ -223,6 +226,8 @@ GEM
       sprockets (> 2.11)
       sprockets-rails
       tilt
+    sentry-raven (2.6.3)
+      faraday (>= 0.7.6, < 1.0)
     sexp_processor (4.9.0)
     slop (3.6.0)
     spring (2.0.2)
@@ -297,6 +302,7 @@ DEPENDENCIES
   rspec-rails (~> 3.6)
   sass-rails (~> 5.0.6)
   sassc-rails
+  sentry-raven
   spring
   spring-commands-rspec
   spring-watcher-listen (~> 2.0.0)
@@ -312,4 +318,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.15.3
+   1.16.0.pre.1
