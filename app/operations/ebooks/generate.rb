@@ -2,11 +2,7 @@ module Ebooks
   class Generate
     pattr_initialize :book
     
-    if Rails.env.development?
-      API_URL = "http://localhost:4567/"
-    else
-      API_URL = "http://webookdisk.profiart.pl/" if Rails.
-    end
+    API_URL = Rails.env.development? ? "http://localhost:4567/" : "http://webookdisk.profiart.pl/"
 
     def call
       response = send_request_to_webook_disk
