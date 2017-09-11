@@ -29,3 +29,8 @@ module Webook2
     config.generators.system_tests = nil
   end
 end
+Raven.configure do |config|
+  config.dsn = 'https://6dfdb23c08d64672ad48828bf3c8012c:e2d4cb8a6f664ef88123bf9ce778c6d3@sentry.io/215175'
+  config.excluded_exceptions = []
+  config.environments = %w(production sandbox)
+end
